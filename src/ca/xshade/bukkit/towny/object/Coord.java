@@ -19,7 +19,6 @@ public class Coord {
     public Coord(int x, int z) {
         this.x = x;
         this.z = z;
-        System.out.println("NEW COORD X: " + x + "    Z: " + z);
     }
 
     public Coord(Coord coord) {
