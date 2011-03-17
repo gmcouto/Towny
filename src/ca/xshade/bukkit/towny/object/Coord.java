@@ -65,11 +65,9 @@ public class Coord {
 
     public static Coord parseCoord(int x, int z) {
         int xresult = x / getCellSize();
-        double xdresult = (x * 1.0) / getCellSize();
         int zresult = z / getCellSize();
-        double zdresult = (z * 1.0) / getCellSize();
-        boolean xneedfix = (((double) xresult) != xdresult);
-        boolean zneedfix = (((double) zresult) != zdresult);
+        boolean xneedfix = ((x % getCellSize())!=0);
+        boolean zneedfix = ((z % getCellSize())!=0);
         return new Coord(xresult - ((x < 0 && xneedfix) ? 1 : 0),
                 zresult - ((z < 0 && zneedfix) ? 1 : 0));
     }
